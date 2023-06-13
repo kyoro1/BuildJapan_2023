@@ -2,9 +2,9 @@
 
 ## Overview
 This repository aimes at demonstrating features of [Prompt flow](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/harness-the-power-of-large-language-models-with-azure-machine/ba-p/3828459) and [Azure Open AI](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview).
+Also, the UI component is developed with [Streamlit-chat](https://pypi.org/project/streamlit-chat/).
 
-
-
+![movie](./docs/movie.gif)
 
 
 ## How to use
@@ -17,7 +17,7 @@ This repository aimes at demonstrating features of [Prompt flow](https://techcom
     - This repository uses Azure Open AI for chatGPT, and prompt flow resource in Azure ML.
 
 3. Configure
-    - Please populate the following contents with `config.yml`. You can change the parameter whatever you want, and you need to change the values for `[YOUR_INSTANCE]` or others.
+    - Please populate the following contents with `config.yml`. You can change the parameter whatever you want, and you need to change the values for `[YOUR_INSTANCE]` and `[YOUR_KEY]`.
         ```config.yml
         OPENAI:
             basic_config:
@@ -55,5 +55,4 @@ This repository aimes at demonstrating features of [Prompt flow](https://techcom
         You fill find the following prompt, if you succeed in the run.
         ![prompt](./docs/prompts.png)
 
-    - Streamlit automatically open the site, otherwise please copy and paste the URL( `http://localhost:8501` ) in your browser :
-         ![movie](./docs/movie.gif)
+    - Streamlit automatically open the site, otherwise please copy and paste the URL( `http://localhost:8501` ) in your browser. You'll find the page as above!
