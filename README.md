@@ -44,7 +44,13 @@ Also, the UI component is developed with [Streamlit-chat](https://pypi.org/proje
         - By clicking `View code` in the upper middle button, you get the following sample code in `python`. Fill in your `Endpoint` and `api_key` in your code.
          ![api key, endpoint](./docs/chatGPT02.png)
     - `PROMPT FLOW`
-        - You find API key and endpoint, after you complete the deployment in prompt flow. Please fill these values in the configuration file.
+        - Select `Chat with Wikipedia` in the following window:
+            ![Chat With Wikipedia](./docs/promptFlow02.png)
+        - After populating the resource, you find the following:
+            ![prompt flow!](./docs/promptFlow03.png)
+        - Then, populate endpoint and deployment as [common real-time endpoint](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-use-managed-online-endpoint-studio?view=azureml-api-2#create-a-managed-online-endpoint) in Azure ML, and you find API key and endpoint. After you complete populating endpoint, please deploy the contents of prompt flow accordingly.
+
+    - Please fill these values in the configuration file.
         - ![api key, endpoint](./docs/promptFlow01.png)
 
 4. Run!
