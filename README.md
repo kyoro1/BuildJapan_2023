@@ -57,4 +57,6 @@ This repository aimes at demonstrating features of [Prompt flow](https://techcom
     - Streamlit automatically open the site, otherwise please access the site as follows: 
          ![Run!](./docs/app_display.png)
 
-    - ![movie](./docs/movie.mov)
+        <video width="320" height="240" controls>
+        <source src="./docs/movie.mov" type="video/mp4">
+        </video>
