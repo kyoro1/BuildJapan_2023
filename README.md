@@ -55,5 +55,5 @@ This repository aimes at demonstrating features of [Prompt flow](https://techcom
         You fill find the following prompt, if you succeed in the run.
         ![prompt](./docs/prompts.png)
 
-    - Streamlit automatically open the site, otherwise please copy and paste the URL(`http://localhost:8501`) in your browser :
+    - Streamlit automatically open the site, otherwise please copy and paste the URL( `http://localhost:8501` ) in your browser :
          ![movie](./docs/movie.gif)
