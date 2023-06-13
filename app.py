@@ -33,9 +33,6 @@ class GPT:
         self.pf_url = self.config['PROMPT_FLOW']['url']
         self.headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ self.pf_api_key), 'azureml-model-deployment': 'blue' }
 
-        ## Chat preference
-        self.chat_preference = self.config['CHAT_PREFERENCE']
-
     def load_config(self) -> None:
         '''
         Load and extract config yml file.
@@ -104,13 +101,20 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
+    # Using "with" notation
+    with st.sidebar:
+        add_radio = st.radio(
+            "Choose the model you want to use",
+            ("OPENAI", "PROMPT FLOW")
+        )
+
     with st.form("Chat with GPT"):
-        user_message = st.text_area(f"Chat with {gpt.chat_preference}")
+        user_message = st.text_area(f"Chat with {add_radio}")
         submitted = st.form_submit_button("Submit")
 
         if submitted:
             ## for Prompt Flow
-            if gpt.chat_preference == "PROMPT_FLOW":
+            if add_radio == "PROMPT FLOW":
                 ## Get the answer
                 answer = gpt.get_prompt_flow(chat_history=st.session_state.chat_history,
                                             prompt=user_message)
@@ -118,7 +122,7 @@ def main():
                 st.session_state.chat_history.append({"inputs": {"question": user_message},
                                                         "outputs": {"answer": answer}})
             # For OpenAI
-            if gpt.chat_preference == 'OPENAI':
+            if add_radio == "OPENAI":
                 ## Get the answer
                 answer = gpt.get_response(chat_history=st.session_state.chat_history,
                                             prompt=user_message)

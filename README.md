@@ -17,30 +17,27 @@ This repository aimes at demonstrating features of [Prompt flow](https://techcom
     - This repository uses Azure Open AI for chatGPT, and prompt flow resource in Azure ML.
 
 3. Configure
+    - Please populate the following contents with `config.yml`. You can change the parameter whatever you want, and you need to change the values for `[YOUR_INSTANCE]` or others.
+        ```config.yml
+        OPENAI:
+            basic_config:
+                api_type: 'azure'
+                api_key: '[YOUR_API_KEY]'
+                api_base: 'https://[YOUR_INSTANCE].openai.azure.com/'
+                api_version: '2023-03-15-preview'
+            engine: 'demo-openai'
+            params: 
+                temperature: 0.9
+                max_tokens: 150
+                top_p: 1
+                frequency_penalty: 0.0
+                presence_penalty: 0.6
+                stop: None
 
-    ```config.yml
-    OPENAI:
-        basic_config:
-            api_type: 'azure'
-            api_key: '[YOUR_API_KEY]'
-            api_base: 'https://[YOUR_INSTANCE].openai.azure.com/'
-            api_version: '2023-03-15-preview'
-        engine: 'demo-openai'
-        params: 
-            temperature: 0.9
-            max_tokens: 150
-            top_p: 1
-            frequency_penalty: 0.0
-            presence_penalty: 0.6
-            stop: None
-
-    PROMPT_FLOW:
-        url: 'https://[YOUR_INSTANCE].japaneast.inference.ml.azure.com/score'
-        api_key: '[YOUR_KEY]'
-
-    CHAT_PREFERENCE: 'OPENAI'
-    #CHAT_PREFERENCE: 'PROMPT_FLOW'
-    ```
+        PROMPT_FLOW:
+            url: 'https://[YOUR_INSTANCE].japaneast.inference.ml.azure.com/score'
+            api_key: '[YOUR_KEY]'
+        ```
     - `OPENAI` 
         - Please specify appropriate parameters by yourself. You can find the explanation in the portal as below.
          ![aiueo](./docs/chatGPT01.png)
@@ -51,6 +48,13 @@ This repository aimes at demonstrating features of [Prompt flow](https://techcom
         - ![api key, endpoint](./docs/promptFlow01.png)
 
 4. Run!
-    ```sh
-    streamlit run ./app.py 
-    ```
+    - Run in command:
+        ```sh
+        streamlit run ./app.py 
+        ```
+        You fill find the following prompt, if you succeed in the run.
+        ![prompt](./docs/prompts.png)
+    - Streamlit automatically open the site, otherwise please access the site as follows: 
+         ![Run!](./docs/app_display.png)
+
+    - ![movie](./docs/movie.mov)
