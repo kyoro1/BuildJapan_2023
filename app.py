@@ -30,8 +30,11 @@ class GPT:
 
         ## config for prompt flow
         self.pf_api_key = self.config['PROMPT_FLOW']['api_key']
+        self.deployment_name = self.config['PROMPT_FLOW']['deployment_name']
         self.pf_url = self.config['PROMPT_FLOW']['url']
-        self.headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ self.pf_api_key), 'azureml-model-deployment': 'blue' }
+        self.headers = {'Content-Type':'application/json', 
+                        'Authorization':('Bearer '+ self.pf_api_key), 
+                        'azureml-model-deployment': self.deployment_name }
 
     def load_config(self) -> None:
         '''
