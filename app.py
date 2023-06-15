@@ -5,6 +5,7 @@ import streamlit as st
 from streamlit_chat import message
 import urllib.request
 import openai
+import ssl
 
 class GPT:
     def __init__(self,
@@ -14,7 +15,7 @@ class GPT:
         self.load_config()
         ## basic configuration
         self.api_type = self.config['OPENAI']['basic_config']['api_type']
-        self.api_key = self.config['OPENAI']['basic_config']['api_key']
+        self.api_key = os.environ.get('OPENAI_API_KEY')
         self.api_base = self.config['OPENAI']['basic_config']['api_base']
         self.api_version = self.config['OPENAI']['basic_config']['api_version']
         self.openai_config()
@@ -29,7 +30,7 @@ class GPT:
         self.stop = self.config['OPENAI']['params']['stop']
 
         ## config for prompt flow
-        self.pf_api_key = self.config['PROMPT_FLOW']['api_key']
+        self.pf_api_key = os.environ.get('PROMPT_FLOW_API_KEY')
         self.deployment_name = self.config['PROMPT_FLOW']['deployment_name']
         self.pf_url = self.config['PROMPT_FLOW']['url']
         self.headers = {'Content-Type':'application/json', 

@@ -1,0 +1,17 @@
+OPENAI:
+    basic_config:
+        api_type: 'azure'
+        api_base: 'https://customizedkyiwasak.openai.azure.com/'
+        api_version: '2023-03-15-preview'
+    engine: 'demo-openai'
+    params: 
+        temperature: 0.9
+        max_tokens: 150
+        top_p: 1
+        frequency_penalty: 0.0
+        presence_penalty: 0.6
+        stop: None
+
+PROMPT_FLOW:
+    url: 'https://build-japan-demo-giggy.japaneast.inference.ml.azure.com/score'
+    deployment_name: 'blue'

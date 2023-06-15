@@ -17,12 +17,11 @@ Also, the UI component is developed with [Streamlit-chat](https://pypi.org/proje
     - This repository uses Azure Open AI for chatGPT, and prompt flow resource in Azure ML.
 
 3. Configure
-    - Please populate the following contents with `config.yml`. You can change the parameter whatever you want, and you need to change the values for `[YOUR_INSTANCE]`,  `[YOUR_KEY]` and `[YOUR_DEPLOYMENT_NAME]`.
+    - Look at `config.yml`, and you can change the parameter whatever you want, and you need to change the values for `[YOUR_INSTANCE]`, `[YOUR_DEPLOYMENT_NAME]`.
         ```config.yml
         OPENAI:
             basic_config:
                 api_type: 'azure'
-                api_key: '[YOUR_API_KEY]'
                 api_base: 'https://[YOUR_INSTANCE].openai.azure.com/'
                 api_version: '2023-03-15-preview'
             engine: 'demo-openai'
@@ -36,8 +35,12 @@ Also, the UI component is developed with [Streamlit-chat](https://pypi.org/proje
 
         PROMPT_FLOW:
             url: 'https://[YOUR_INSTANCE].japaneast.inference.ml.azure.com/score'
-            api_key: '[YOUR_KEY]'
             deployemnt_name: '[YOUR_DEPLOYMENT_NAME]'
+        ```
+        Also, you need to setup 2 variables as environmental variable:
+        ```sh
+        export OPENAI_API_KEY=[YOUR_OPENAI_KEY]
+        export PROMPT_FLOW_API_KEY=[YOUR_PROMPT_FLOW_KEY]
         ```
     - `OPENAI` 
         - Please specify appropriate parameters by yourself. You can find the explanation in the portal as below.
