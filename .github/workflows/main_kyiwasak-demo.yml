@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'kyiwasak-demo'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BDA2092EC6C3461999F8131B6D984AFA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B27FAAFAFE7F437EAB962A39A0D55F49 }}
