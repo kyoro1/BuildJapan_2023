@@ -140,7 +140,7 @@ def main():
             for i in range(len(st.session_state['generated'])):
                 ## User message
                 message(st.session_state['past'][i], is_user=True, key=str(i) + "_user")
-                ## Bot message
+                ## Bot message１
                 message(st.session_state['generated'][i], key=str(i))
 
 if __name__ == '__main__':

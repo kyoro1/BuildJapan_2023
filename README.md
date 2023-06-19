@@ -4,7 +4,7 @@
 This repository aimes at demonstrating features of [Prompt flow](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/harness-the-power-of-large-language-models-with-azure-machine/ba-p/3828459) and [Azure Open AI](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview).
 Also, the UI component is developed with [Streamlit-chat](https://pypi.org/project/streamlit-chat/).
 
-![movie](./docs/movie.gif)
+![movie](./docs/promptFlow_ExtraLarge.gif)
 
 
 ## How to use
